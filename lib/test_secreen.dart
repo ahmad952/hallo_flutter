@@ -1,13 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-final ContainerGeneretor = ()=> Container(
-  width: 50,
-  height: 50,
-  color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-)
 
-;
+
 
 class TestScreen extends StatelessWidget{
   @override
@@ -21,25 +16,19 @@ class TestScreen extends StatelessWidget{
           height: 200,
           padding: EdgeInsets.all(10),
           color:  Colors.amber,
-          child: ListView(// leasy also die zeigt contener die in ansicht ist
-          scrollDirection: Axis.horizontal,  // horizeotal scrolle
-            children: [
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-
-
-            ],
-
-          ),
+          child: //Row
+           Column(mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,children: [
+            Icon(Icons.add_circle),
+            Icon(Icons.add_circle),
+            Icon(Icons.add_circle),
+            Icon(Icons.add_circle),
+            Container(color:Colors.red , height: 50,width: 50,)
+           ],  // macht die Container strtch wie grosse Continer
+          )
       ),
       )
-    );
-    throw UnimplementedError();
+    );throw UnimplementedError();
   }
 
 
