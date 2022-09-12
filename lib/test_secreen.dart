@@ -15,27 +15,21 @@ class TestScreen extends StatelessWidget{
     // TODO: implement build
     return Material(
       color: Colors.white,
-      child: Center(
-        child: Container(
-          width: 200,
-          height: 200,
-          padding: EdgeInsets.all(10),
-          color:  Colors.amber,
-          child: ListView(// leasy also die zeigt contener die in ansicht ist
-          scrollDirection: Axis.horizontal,  // horizeotal scrolle
-            children: [
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-
-
-            ],
-
+      child:Center(
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:  [
+          Text("Hallo ",style: TextStyle(fontSize: 25)
+            ,
           ),
+          Icon(Icons.account_box, size: 80
+          ),
+          Image.asset("pink_floyd.png"
+          ),
+          Image.network("https://images.utopia.de/6fRp4J9GDVQz48UNnRZ3iwn2LZEhPH6t-Txghd4u1WU/rt:fill/w:640/h:300/g:ce/plain/2019/12/free-bleeding-cc0-pixabay-myriams-fotos-191216.jpg",
+            width: 200, ),
+          
+        ],
       ),
       )
     );
