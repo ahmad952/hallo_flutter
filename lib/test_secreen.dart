@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:touchable_opacity/touchable_opacity.dart';
 final ContainerGeneretor = ()=> Container(
   width: 50,
   height: 50,
@@ -24,13 +25,68 @@ class TestScreen extends StatelessWidget{
           child: ListView(// leasy also die zeigt contener die in ansicht ist
           scrollDirection: Axis.horizontal,  // horizeotal scrolle
             children: [
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
-              ContainerGeneretor(),
+              GestureDetector(// keine animation
+                onTap: (){
+                  showDialog(context:context, builder:(context){
+                    return AlertDialog(
+
+                      title: Text("Alert"),
+
+                    );
+
+                  });
+
+                },
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("cklick me"),
+                    ],
+                  ),color: Colors.lightBlue, height: 100,width: 100,),
+              ),
+      //____________________________________________________________________________________________________________________________________________
+              InkWell(// hier mit sound cklick  animation
+                onTap: (){
+                  showDialog(context:context, builder:(context){
+                    return AlertDialog(
+
+                      title: Text("Alert"),
+
+                    );
+
+                  });
+
+                },
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("cklick me"),
+                    ],
+                  ),color: Colors.red, height: 100,width: 100,),
+              ),
+  //____________________________________________________________________________________________________________________________________________
+              TouchableOpacity(// das butten geblendet  also nutzer hat gefül gekklickt über fläsche beweget
+                onTap: (){
+                  showDialog(context:context, builder:(context){
+                    return AlertDialog(
+
+                      title: Text("Alert"),
+
+                    );
+
+                  });
+
+                },
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("cklick me"),
+                    ],
+                  ),color: Colors.green, height: 100,width: 100,),
+              ),
 
 
             ],
